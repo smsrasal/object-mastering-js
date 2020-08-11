@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This key word</title>
+</head>
+<body>
+    <h1>this is not confused any more</h1>
+    <p onclick="add(2, 3)">I am a paragraph  do not click me</p>
+
+
+
+    <script>
+                const myObj = {
+                     name: 'kuddus Ali',
+                     //method  ba function getFullName
+                    getFullName: function(){
+                    console.log(this);
+                    return 'Mr. ' + this.name; 
+                }
+             }
+             //          myObj.getFullName();
+              const anotherObj = {
+                 name: 'Biddyut Ali'
+                } 
+                setTimeout(function(){
+                    console.log(this);
+                }, 1000);
+                //     anotherObj.getFullName = myObj.getFullName;
+                //     console.log(anotherObj.getFullName);
+                
+                // Execuate er bame jodi kew na thake taile window context
+               // method er left e ba dot er left e je thakbe sei hove  this er  value 
+               // myObj.getFullName();
+               // anotherObj.getFullName();
+
+            function add (a, b) {
+                return a + b;
+            }
+            add(12, 13);
+
+            anotherObj.sum = add;
+            anotherObj.sum();
+
+    </script>
+</body>
+</html>
